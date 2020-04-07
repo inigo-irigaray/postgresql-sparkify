@@ -22,15 +22,15 @@
 
 ## Code Description
 
-### sql_queries.py
+### ``sql_queries.py``
 
 <p align=justify> </p>
 
-### create_tables.py
+### ``create_tables.py``
 
 <p align=justify> </p>
 
-### etl.py
+### ``etl.py``
 
 <p align=justify> </p>
 
@@ -38,12 +38,12 @@
 
 ### Option 1. Creating Databases and Tables from Scratch:
 
-#### <p align=justify><b>1.A. Creating the Sparkify database and tables required from create_tables.py first, and then extracting, transforming and loading the data from etl.py: </b></p>
+#### <p align=justify><b>1.A. Creating the Sparkify database and tables required from ``create_tables.py``first, and then extracting, transforming and loading the data from ``etl.py``: </b></p>
 
         $python3 create_tables.py
         $python3 etl.py
       
-#### 1.B. Performing all actions directly from etl.py:
+#### 1.B. Performing all actions directly from ``etl.py``:
 
         $python3 etl.py --create_db
         
