@@ -1,7 +1,5 @@
 # Sparkify Music App Log and Songs Relational Databases 
 
-<b>IMPORTANT NOTE: README IN PROGRESS</b>
-
 ## Challenge
 
 <p align=justify>A startup called Sparkify wants to analyze the data they've been collecting on songs and user activity on their new music streaming app. The analytics team is particularly interested in understanding what songs users are listening to. Currently, they don't have an easy way to query their data, which resides in a directory of JSON logs on user activity on the app, as well as a directory with JSON metadata on the songs in their app.</p>
@@ -24,15 +22,15 @@
 
 ### ``sql_queries.py``
 
-<p align=justify> </p>
+<p align=justify>The script specifies the SQL commands to DROP and CREATE the songplays, users, songs, artists and time tables in the relational database, as well as the INSERT command to fill in the data and a specific SELECT utility command to help in the processing of data for the songplays table.</p>
 
 ### ``create_tables.py``
 
-<p align=justify> </p>
+<p align=justify>The script defines the functions to create the Sparkify relational database, create and drop the five tables aforementioned from the imported SQL commands in the previous script. It can be run as standalone to create empty tables or as part of the ETL pipeline in the following script.</p>
 
 ### ``etl.py``
 
-<p align=justify> </p>
+<p align=justify>The script extracts, transforms and loads the data into the required tables in the Sparkify database from the song and log files in JSON format. It can additionally create the required tables and dataset if predetermined by the user with the --create_db argument in the command line.</p>
 
 ## Running the Code
 
