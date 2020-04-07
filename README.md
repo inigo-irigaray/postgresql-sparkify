@@ -18,7 +18,7 @@
 
 ### ERD
 
-image
+<p align=center><img src=https://github.com/inigo-irigaray/star-schema-postgresql-sparkify/blob/master/imgs/sparkify_schema.png> </a></p>
 
 ## Code Description
 
