@@ -1,8 +1,14 @@
 import os
 import glob
+from argparse import ArgumentParser
+
 import psycopg2
 import pandas as pd
+
 from sql_queries import *
+from create_tables import main as setup
+
+
 
 
 def process_song_file(cur, filepath):
@@ -17,6 +23,8 @@ def process_song_file(cur, filepath):
     artist_data = df[['artist_id', 'artist_name', 'artist_location', 'artist_latitude', 'artist_longitude']].values[0]
     cur.execute(artist_table_insert, artist_data)
 
+    
+    
 
 def process_log_file(cur, filepath):
     # open log file
@@ -60,6 +68,8 @@ def process_log_file(cur, filepath):
                         row.sessionId, row.location, row.userAgent)
         cur.execute(songplay_table_insert, songplay_data)
 
+        
+        
 
 def process_data(cur, conn, filepath, func):
     # get all files matching extension from directory
@@ -79,6 +89,8 @@ def process_data(cur, conn, filepath, func):
         conn.commit()
         print('{}/{} files processed.'.format(i, num_files))
 
+        
+        
 
 def main():
     conn = psycopg2.connect("host=127.0.0.1 dbname=sparkifydb user=student password=student")
@@ -91,5 +103,13 @@ def main():
     print("\nStar schema created!")
 
 
+    
+    
 if __name__ == "__main__":
+    parser = ArgumentParser()
+    parser.add_argument('--create_db', action='store_true')
+    config = parser.parse_args()
+    
+    if config.create_db:
+        setup() # creates database and tables
     main()
